@@ -9,12 +9,13 @@
 <script>
 export default {
   name: "Categories",
-  props: {
-    Img: String,
-    ItemName: String,
-    bg: String,
-    ItemNumber: String,
-  },
+  // props: {
+  //   Img: String,
+  //   ItemName: String,
+  //   bg: String,
+  //   ItemNumber: String,
+  // },
+  props: ["Img", "ItemName", "bg", "ItemNumber"],
 };
 </script>
 
@@ -32,6 +33,11 @@ export default {
   border: 1px solid rgba(129, 177, 61, 1);
   box-shadow: 10px 10px lightgray;
   border-radius: 10px;
+}
+.Item-Box:hover {
+  box-shadow: 5px 5px 5px rgba(129, 177, 61, 1);
+  transform: translate(5px, 5px);
+  cursor: pointer;
 }
 .Img {
   position: relative;

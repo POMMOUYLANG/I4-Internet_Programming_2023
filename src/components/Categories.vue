@@ -25,14 +25,16 @@ export default {
 .Item-Box {
   width: 136px;
   height: 177px;
-  margin-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid rgba(129, 177, 61, 1);
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 2px solid rgba(129, 177, 61, 1);
   box-shadow: 10px 10px lightgray;
   border-radius: 10px;
+
 }
 .Item-Box:hover {
   box-shadow: 5px 5px 5px rgba(129, 177, 61, 1);

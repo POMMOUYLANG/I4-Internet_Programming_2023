@@ -33,14 +33,16 @@ export default {
 .Cards-Box {
   width: 482px;
   height: 300px;
-  border: 1px solid rgba(129, 177, 61, 1);
+  border: 2px solid rgba(129, 177, 61, 1);
   box-shadow: 10px 10px lightgray;
   border-radius: 10px;
-  margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .Cards-Box:hover {
   box-shadow: 5px 5px 5px rgba(129, 177, 61, 1);

@@ -21,6 +21,6 @@ export default {
 <style scoped>
 .Box {
   margin: auto;
-  width: 1500px;
+  width: 1520px;
 }
 </style>

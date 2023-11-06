@@ -143,6 +143,5 @@ export default {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 15px;
 }
 </style>

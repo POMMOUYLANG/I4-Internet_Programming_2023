@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SuperProduct from "./views/SuperProduct.vue";
+import SuperProduct from "./views/SuperProduct.vue"; 
 import Menu from "./components/Menu.vue";
 export default {
   name: "App",

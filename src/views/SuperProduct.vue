@@ -1,4 +1,5 @@
 <template>
+  <!-- <Menu/> -->
   <Menu :Featured="Feature"></Menu>
   <div class="Categories-Row">
     <Categories
@@ -143,11 +144,8 @@ export default {
 </script>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;800&family=Quicksand:wght@400;600;700&display=swap");
+
 .Categories-Row {
   width: 100%;
   height: 100%;

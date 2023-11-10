@@ -34,7 +34,11 @@ export default {
   font-family: "Quicksand", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  background-image: linear-gradient(to top, rgba(129, 177, 61, 1), white);
+  /* background-image: linear-gradient(to top, rgba(129, 177, 61, 1), white); */
+  /* font-size: 72px; */
+  background: -webkit-linear-gradient(darkblue, rgba(129, 177, 61, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .Container_Menu .Menu_bar {
   font-family: "Quicksand", sans-serif;

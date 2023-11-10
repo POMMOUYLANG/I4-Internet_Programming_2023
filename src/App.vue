@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SuperProduct from "./views/SuperProduct.vue"; 
+import SuperProduct from "./views/SuperProduct.vue";
 import Menu from "./components/Menu.vue";
 export default {
   name: "App",
@@ -20,9 +20,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+@import "https://unicons.iconscout.com/release/v4.0.0/css/line.css";
 .Container_Box {
   margin: auto;
-  width: 1520px;
+  width: 1540px;
 }
 </style>

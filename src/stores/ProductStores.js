@@ -188,7 +188,6 @@ export const useProductStore = defineStore("Product_Store", {
         Subvalue: "$2.80",
         Bgbtn: "#DEF9EC",
         Borderbtn: "1px solid rgba(255, 255, 255, 1)",
-
         Text: "Add",
         Arrow: "+",
       },
@@ -203,7 +202,6 @@ export const useProductStore = defineStore("Product_Store", {
         Subvalue: "$2.80",
         Bgbtn: "#DEF9EC",
         Borderbtn: "1px solid rgba(255, 255, 255, 1)",
-
         Text: "Add",
         Arrow: "+",
       },
@@ -218,13 +216,12 @@ export const useProductStore = defineStore("Product_Store", {
         Subvalue: "$2.80",
         Bgbtn: "#DEF9EC",
         Borderbtn: "1px solid rgba(255, 255, 255, 1)",
-
         Text: "Add",
         Arrow: "+",
       },
       {
         id: "10",
-        Value: "-Hot",
+        Value: "Hot",
         Bg_value: "rgba(253, 110, 110, 1)",
         Img: "https://s3-alpha-sig.figma.com/img/6667/38db/f36fd0ac0722f68e84acd3769588855f?Expires=1700438400&Signature=Qc17jJ~cvda~4ucerYC1hG0XHZ5HupaIHl6PKQ-zfSebxiohtBrxr3pNn38TCrRxjX9UZvFt7TveGV6sVXC68cvcKchSrBf8bIvoQu9-7WbYnz-YBzw4Lvk5wuiHcx1SyMddxpscf5gs6mORZgG1rd~V8pKas~J0g7kiJ4t8CTxeBWzgkRgHqQZnxcFHoKs8Yl4LZ-4kL~qUpPgCG0tCbbP41XJNeqcPNwuTSZYmleb1Xn-MdMunMvFYKL-k9hoyz~FyOVOBLAi0h7Rh-nU7lHmD7dmDtBnhQQJ-rIKoY9RkUnOQj44YNTFEYR70ci0gg466~Ufjf-8mjEy9CRxnJg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
         Title: "Haagen-Dazs Caramel Cone Ice Cream Ketchup",
@@ -233,7 +230,6 @@ export const useProductStore = defineStore("Product_Store", {
         Subvalue: "$2.80",
         Bgbtn: "#DEF9EC",
         Borderbtn: "1px solid rgba(255, 255, 255, 1)",
-
         Text: "Add",
         Arrow: "+",
       },

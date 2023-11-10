@@ -100,6 +100,5 @@ export default {
   gap: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 </style>

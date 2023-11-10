@@ -25,8 +25,16 @@
           class="add"
           :style="{ backgroundColor: Bgbtn, border: Borderbtn }">
           <div class="text">{{ Text }}</div>
-          <div class="arrow">{{ Arrow }}</div>
-          
+          <!-- <div class="arrow">{{ Arrow }}</div> -->
+          <div class="arrow">
+            {{ Arrow }}
+            <!-- <i class="uis uis-angle-up"></i>
+            <i class="uis uis-angle-down"></i> -->
+            <!-- <div class="up">{{ arrowup }}</div>
+            <div class="up">{{ arrowdown }}</div> -->
+            <!-- <div class="up">^</div>
+            <div class="down">^</div> -->
+          </div>
         </button>
       </div>
     </div>
@@ -53,6 +61,8 @@ export default {
     "Borderbtn",
     "Text",
     "Arrow",
+    "arrowup",
+    "arrowdown",
   ],
   components: {
     FontAwesomeIcon,
@@ -167,29 +177,24 @@ export default {
   position: relative;
   top: 3px;
   text-decoration: line-through;
+  margin-left: 5px;
 }
 .Details .add {
-  width: 67px;
-  height: 29px;
-  /* border: 1px solid rgba(59, 183, 126, 1); */
+  width: 75px;
+  height: 30px;
   border-radius: 4px;
+  /* border: 1px solid rgba(59, 183, 126, 1); */
   color: rgba(59, 183, 126, 1);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-.Details .add:hover {
-  transform: translate(5px, 5px);
-  cursor: pointer;
+  padding-top: 6px;
 }
 .Details .add .text {
   font-size: 14px;
   font-weight: 700;
-  padding: 4px;
 }
 .Details .add .arrow {
+  height: 10px;
   font-size: 14px;
-  padding: 4px;
-
 }
 </style>

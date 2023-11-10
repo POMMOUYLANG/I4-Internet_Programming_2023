@@ -34,9 +34,11 @@ export default {
   font-family: "Quicksand", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  /* background-image: linear-gradient(to top, rgba(129, 177, 61, 1), white); */
-  /* font-size: 72px; */
-  background: -webkit-linear-gradient(darkblue, rgba(129, 177, 61, 1));
+  background: linear-gradient(
+    90deg,
+    rgba(118, 161, 67, 1) 28%,
+    rgba(9, 9, 121, 1) 83%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,6 +57,7 @@ export default {
 }
 .Container_Menu .Menu_bar ul .active {
   font-weight: 700;
+  color: rgba(9, 9, 121, 1);
 }
 .Container_Menu .Menu_bar ul li {
   list-style: none;
@@ -64,11 +67,9 @@ export default {
   color: rgba(37, 61, 78, 1);
 }
 .Container_Menu .Menu_bar ul li a:hover {
-  /* text-decoration: underline; */
-  /* background-color: rgba(129, 177, 61, 1); */
-  background-image: linear-gradient(to top, rgba(129, 177, 61, 1), white);
   padding: 10px;
-  color: black;
   font-weight: 700;
+  transform: translate(5px, 5px);
+  cursor: pointer;
 }
 </style>

@@ -21,21 +21,21 @@
           <div class="lg">{{ Supvalue }}</div>
           <div class="sm">{{ Subvalue }}</div>
         </div>
-        <button
+        <div class="">
+          <div class="amount" @click="increaseNum()" v-if="button == true">
+            <!-- <AddButton /> -->
+            <ButtonAdd />
+          </div>
+          <div class="amount" @click="decreaseNum()" v-else><ButtonPlus /></div>
+        </div>
+        <!-- <button
           class="add"
           :style="{ backgroundColor: Bgbtn, border: Borderbtn }">
           <div class="text">{{ Text }}</div>
-          <!-- <div class="arrow">{{ Arrow }}</div> -->
           <div class="arrow">
             {{ Arrow }}
-            <!-- <i class="uis uis-angle-up"></i>
-            <i class="uis uis-angle-down"></i> -->
-            <!-- <div class="up">{{ arrowup }}</div>
-            <div class="up">{{ arrowdown }}</div> -->
-            <!-- <div class="up">^</div>
-            <div class="down">^</div> -->
           </div>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
@@ -47,6 +47,9 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 library.add(fas);
+
+import ButtonAdd from "./ButtonAdd.vue";
+import ButtonPlus from "./ButtonPlus.vue";
 export default {
   name: "Product",
   props: [
@@ -66,6 +69,24 @@ export default {
   ],
   components: {
     FontAwesomeIcon,
+    ButtonAdd,
+    ButtonPlus,
+  },
+  methods: {
+    increaseNum() {
+      this.button = false;
+    },
+    decreaseNum() {
+      let n = document.getElementById("input_amout");
+      if (n.value == 0) {
+        this.button = true;
+      }
+    },
+  },
+  data() {
+    return {
+      button: true,
+    };
   },
 };
 </script>

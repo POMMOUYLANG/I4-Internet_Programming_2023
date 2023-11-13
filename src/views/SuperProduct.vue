@@ -1,4 +1,6 @@
 <template>
+  <!-- <ButtonAdd></ButtonAdd> -->
+  <!-- <ButtonPlus></ButtonPlus> -->
   <!-- <Menu/> -->
   <Menu :Featured="Feature"></Menu>
   <div class="Categories-Row">
@@ -34,9 +36,9 @@
       :Supvalue="i.Supvalue"
       :Subvalue="i.Subvalue"
       :Bgbtn="i.Bgbtn"
-      :Borderbtn="i.Borderbtn"
-      :Text="i.Text"
-      :Arrow="i.Arrow" />
+      :Borderbtn="i.Borderbtn" />
+    <!-- :Text="i.Text" -->
+    <!-- :Arrow="i.Arrow"  -->
   </div>
 </template>
 
@@ -48,6 +50,8 @@ import Categories from "../components/Categories.vue";
 import Promotions from "../components/Promotions.vue";
 import Button from "../components/Button.vue";
 import Product from "../components/Product.vue";
+import ButtonAdd from "../components/ButtonAdd.vue";
+import ButtonPlus from "../components/ButtonPlus.vue";
 // import Img from "../assets/images/Group 1.png";
 export default {
   name: "SuperProject",
@@ -57,6 +61,8 @@ export default {
     Button,
     Menu,
     Product,
+    ButtonAdd,
+    ButtonPlus,
   },
   data() {
     return {

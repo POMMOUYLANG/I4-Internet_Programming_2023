@@ -30,6 +30,7 @@ input {
   border: none;
   color: rgba(59, 183, 126, 1);
   outline: none;
+  font-size: 15px;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

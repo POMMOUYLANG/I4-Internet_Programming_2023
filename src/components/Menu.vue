@@ -66,10 +66,13 @@ export default {
   text-decoration: none;
   color: rgba(37, 61, 78, 1);
 }
-.Container_Menu .Menu_bar ul li a:hover {
+.Container_Menu .Menu_bar a:hover {
+  font-weight: 700;
+}
+/* .Container_Menu .Menu_bar ul li a:hover {
   padding: 10px;
   font-weight: 700;
   transform: translate(5px, 5px);
   cursor: pointer;
-}
+} */
 </style>

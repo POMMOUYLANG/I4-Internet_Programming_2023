@@ -2,6 +2,9 @@
   <!-- <ButtonAdd></ButtonAdd> -->
   <!-- <ButtonPlus></ButtonPlus> -->
   <!-- <Menu/> -->
+  <div class="MenuItem">
+    <MenuItem></MenuItem>
+  </div>
   <div class="Showcase">
     <ShowCase
       v-for="i in ShowCase"
@@ -62,6 +65,7 @@ import Product from "../components/Product.vue";
 import ButtonAdd from "../components/ButtonAdd.vue";
 import ButtonPlus from "../components/ButtonPlus.vue";
 import ShowCase from "../components/ShowCase.vue";
+import MenuItem from "../components/MenuItem.vue";
 export default {
   name: "SuperProject",
   components: {
@@ -73,6 +77,7 @@ export default {
     ButtonAdd,
     ButtonPlus,
     ShowCase,
+    MenuItem,
   },
   data() {
     return {
@@ -118,7 +123,12 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .Showcase {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.MenuItem {
   width: 100%;
   margin-bottom: 20px;
 }

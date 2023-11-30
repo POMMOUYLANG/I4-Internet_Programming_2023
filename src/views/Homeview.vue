@@ -1,6 +1,6 @@
 <template>
-  <div class="menutop">
-    <SearchBox></SearchBox>
+  <div class="menu_first">
+    <SearchBox />
     <div class="MenuBarAll">
       <MenuBarAll
         v-for="i in MenuBarAll"
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="menufirst">
+  <div class="menu_second">
     <div class="MenuItemBig">
       <MenuItemBig />
     </div>
@@ -95,8 +95,6 @@
       :Subvalue="i.Subvalue"
       :Bgbtn="i.Bgbtn"
       :Borderbtn="i.Borderbtn" />
-    <!-- :Text="i.Text" -->
-    <!-- :Arrow="i.Arrow"  -->
   </div>
 </template>
 
@@ -153,7 +151,10 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;800&family=Quicksand:wght@400;600;700&display=swap");
-
+body{
+  margin: auto;
+  width: 1500px;
+}
 .Categories-Row {
   width: 100%;
   height: 100%;
@@ -183,10 +184,10 @@ export default {
   width: 100%;
   margin-bottom: 20px;
 }
-.MenuItem {
+/* .MenuItem {
   width: 100%;
   margin-bottom: 20px;
-}
+} */
 .MenuItemAll {
   width: 1000px;
   display: flex;

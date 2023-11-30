@@ -36,6 +36,7 @@
         :second_text="i.second_text"></MenuItemAll>
     </div>
   </div>
+  <PageHeaderVue />
 </template>
 
 <script>
@@ -45,6 +46,7 @@ import MenuItemAll from "../components/MenuItemAll.vue";
 import MenuItemBig from "../components/MenuItemBig.vue";
 import SearchBox from "../components/SearchBox.vue";
 import MenuBarAll from "../components/MenuBarAll.vue";
+import PageHeaderVue from "../components/PageHeader.vue";
 export default {
   name: "Categoryview",
   components: {
@@ -52,6 +54,7 @@ export default {
     MenuItemBig,
     SearchBox,
     MenuBarAll,
+    PageHeaderVue,
   },
   computed: {
     ...mapState(useProductStore, ["MenuItemAll"]),
@@ -60,4 +63,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  margin: auto;
+  width: 1500px;
+}
+</style>

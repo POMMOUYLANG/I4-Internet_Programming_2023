@@ -47,6 +47,11 @@ export default {
   align-items: center;
   gap: 5px;
 }
+.menu_item .first_item .first_text{
+  color: rgba(126, 126, 126, 1);
+  font-size: 16px;
+  font-weight: 400;
+}
 .menu_item .second_item {
   display: flex;
   justify-content: center;

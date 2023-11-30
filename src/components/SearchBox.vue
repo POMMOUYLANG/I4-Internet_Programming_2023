@@ -15,10 +15,8 @@
         <div class="cate_icon"><i class="uil uil-angle-down"></i></div>
       </div>
       <div class="search_two">
-        <div class="search_text">
-          | <input type="text" placeholder="Search for items" />
-        </div>
-        <i class="icon_text uil uil-search"></i>
+        <div>| <input type="text" placeholder="Search for items" /></div>
+        <i class="uil uil-search"></i>
       </div>
     </div>
   </div>
@@ -84,13 +82,11 @@ export default {
 }
 .container_seach .search_two {
   width: 80%;
+  color: rgba(182, 182, 182, 1);
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-.container_seach .search_two .search_text {
-  color: rgba(182, 182, 182, 1);
-}
+
 .container_seach .search_two input {
   font-size: 12px;
   font-weight: 400;
@@ -98,7 +94,7 @@ export default {
   border: none;
   color: rgba(182, 182, 182, 1);
 }
-.container_seach .search_two .icon_text {
+.container_seach .search_two .uil {
   color: rgba(126, 126, 126, 1);
 }
 </style>

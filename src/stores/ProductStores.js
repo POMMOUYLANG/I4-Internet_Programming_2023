@@ -55,13 +55,13 @@ export const useProductStore = defineStore("Product_Store", {
       {
         second_bg: "",
         second_icon: "uil-angle-down",
-        second_color: "",
+        second_color: "rgba(126, 126, 126, 1)",
         second_text: "Food",
       },
       {
         second_bg: "",
         second_icon: "uil-angle-down",
-        second_color: "",
+        second_color: "rgba(126, 126, 126, 1)",
         second_text: "Vegetable",
       },
       {
@@ -79,7 +79,7 @@ export const useProductStore = defineStore("Product_Store", {
       {
         second_bg: "",
         second_icon: "uil-angle-down",
-        second_color: "",
+        second_color: "rgba(126, 126, 126, 1)",
         second_text: "Meat & Seafood",
       },
       {

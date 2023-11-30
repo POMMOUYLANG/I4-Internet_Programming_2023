@@ -30,7 +30,6 @@ export default {
   width: 170px;
   height: 55px;
   border-radius: 3px;
-  /* border: 2px solid white; */
   border: none;
   display: flex;
   justify-content: center;

@@ -1,10 +1,54 @@
 <template>
-  <!-- <ButtonAdd></ButtonAdd> -->
-  <!-- <ButtonPlus></ButtonPlus> -->
-  <!-- <Menu/> -->
-  <div class="MenuItem">
-    <MenuItem></MenuItem>
+  <div class="menutop">
+    <SearchBox></SearchBox>
+    <div class="MenuBarAll">
+      <MenuBarAll
+        v-for="i in MenuBarAll"
+        :key="i.MenuBarAll"
+        :link="i.link"
+        :first_bg="i.first_bg"
+        :first_icon="i.first_icon"
+        :first_color="i.first_color"
+        :first_text="i.first_text"
+        :second_bg="i.second_bg"
+        :second_icon="i.second_icon"
+        :second_color="i.second_color"
+        :second_text="i.second_text"></MenuBarAll>
+    </div>
   </div>
+
+  <div class="menufirst">
+    <div class="MenuItemBig">
+      <MenuItemBig />
+    </div>
+    <div class="MenuItemAll">
+      <MenuItemAll
+        v-for="i in MenuItemAll"
+        :key="i.MenuItemAll"
+        :link="i.link"
+        :first_bg="i.first_bg"
+        :first_icon="i.first_icon"
+        :first_color="i.first_color"
+        :first_text="i.first_text"
+        :second_bg="i.second_bg"
+        :second_icon="i.second_icon"
+        :second_color="i.second_color"
+        :second_text="i.second_text"></MenuItemAll>
+    </div>
+  </div>
+  <!-- <div class="">
+    <MenuItems
+      v-for="i in MenuItems"
+      :key="i.MenuItems"
+      :first_bg="i.first_bg"
+      :first_icon="i.first_icon"
+      :first_color="i.first_color"
+      :first_text="i.first_text"
+      :second_bg="i.second_bg"
+      :second_icon="i.second_icon"
+      :second_color="i.second_color"
+      :second_text="i.second_text"></MenuItems>
+  </div> -->
   <div class="Showcase">
     <ShowCase
       v-for="i in ShowCase"
@@ -19,6 +63,7 @@
     <Categories
       v-for="i in Categories"
       :key="i.Categories"
+      :link="i.link"
       :bg="i.bg"
       :ItemName="i.ItemName"
       :Img="i.Img"
@@ -65,9 +110,13 @@ import Product from "../components/Product.vue";
 import ButtonAdd from "../components/ButtonAdd.vue";
 import ButtonPlus from "../components/ButtonPlus.vue";
 import ShowCase from "../components/ShowCase.vue";
-import MenuItem from "../components/MenuItem.vue";
+import MenuItems from "../components/MenuItems.vue";
+import MenuItemAll from "../components/MenuItemAll.vue";
+import MenuItemBig from "../components/MenuItemBig.vue";
+import MenuBarAll from "../components/MenuBarAll.vue";
+import SearchBox from "../components/SearchBox.vue";
 export default {
-  name: "SuperProject",
+  name: "HomeView",
   components: {
     Categories,
     Promotions,
@@ -77,7 +126,11 @@ export default {
     ButtonAdd,
     ButtonPlus,
     ShowCase,
-    MenuItem,
+    MenuItemBig,
+    MenuItems,
+    MenuItemAll,
+    MenuBarAll,
+    SearchBox,
   },
   data() {
     return {
@@ -90,6 +143,9 @@ export default {
     ...mapState(useProductStore, ["Promotions"]),
     ...mapState(useProductStore, ["Product"]),
     ...mapState(useProductStore, ["ShowCase"]),
+    ...mapState(useProductStore, ["MenuItems"]),
+    ...mapState(useProductStore, ["MenuItemAll"]),
+    ...mapState(useProductStore, ["MenuBarAll"]),
   },
 };
 </script>
@@ -105,7 +161,6 @@ export default {
   align-items: center;
   margin-top: 30px;
 }
-
 .Promotions-Row {
   width: 100%;
   display: flex;
@@ -123,7 +178,6 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .Showcase {
   width: 100%;
   margin-bottom: 20px;
@@ -131,5 +185,21 @@ export default {
 .MenuItem {
   width: 100%;
   margin-bottom: 20px;
+}
+.MenuItemAll {
+  width: 1000px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  bottom: 35px;
+  left: 260px;
+}
+.MenuBarAll {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  bottom: 40px;
 }
 </style>

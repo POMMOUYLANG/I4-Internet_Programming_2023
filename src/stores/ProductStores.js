@@ -24,6 +24,97 @@ export const useProductStore = defineStore("Product_Store", {
         Img: SC,
       },
     ],
+    // MenuItem: [
+    //   {
+    //     first_bg: "",
+    //     first_icon: "uil-user",
+    //     first_color: "",
+    //     first_text: "Account",
+    //   },
+    //   {
+    //     second_bg: "",
+    //     second_icon: "uil-user",
+    //     second_color: "",
+    //     second_text: "Account",
+    //   },
+    // ],
+    MenuItemAll: [
+      {
+        link: "/category",
+        first_bg: "",
+        first_icon: "uil-fire",
+        first_color: "rgba(59, 183, 126, 1)",
+        first_text: "Hot Deals",
+      },
+      {
+        second_bg: "",
+        second_icon: "",
+        second_color: "",
+        second_text: "Home",
+      },
+      {
+        second_bg: "",
+        second_icon: "uil-angle-down",
+        second_color: "",
+        second_text: "Food",
+      },
+      {
+        second_bg: "",
+        second_icon: "uil-angle-down",
+        second_color: "",
+        second_text: "Vegetable",
+      },
+      {
+        second_bg: "",
+        second_icon: "",
+        second_color: "",
+        second_text: "Drink",
+      },
+      {
+        second_bg: "",
+        second_icon: "",
+        second_color: "",
+        second_text: "Cookies",
+      },
+      {
+        second_bg: "",
+        second_icon: "uil-angle-down",
+        second_color: "",
+        second_text: "Meat & Seafood",
+      },
+      {
+        second_bg: "",
+        second_icon: "",
+        second_color: "",
+        second_text: "Bakery",
+      },
+    ],
+    MenuBarAll: [
+      {
+        first_bg: "",
+        first_icon: "uil-user",
+        first_color: "",
+        first_text: "Account",
+      },
+      {
+        first_bg: "",
+        first_icon: "uil-sync",
+        first_color: "",
+        first_text: "Compare",
+      },
+      {
+        first_bg: "",
+        first_icon: "uil-heart",
+        first_color: "",
+        first_text: "Wishlist",
+      },
+      {
+        first_bg: "",
+        first_icon: "uil-shopping-cart",
+        first_color: "",
+        first_text: "Cart",
+      },
+    ],
     Promotions: [
       {
         Text: "Everyday Fresh & Clean with Our Products",
@@ -52,6 +143,7 @@ export const useProductStore = defineStore("Product_Store", {
     Categories: [
       {
         // Img: "https://s3-alpha-sig.figma.com/img/8370/e915/8a586f746c0b10b70cd405c8aa1f2038?Expires=1699228800&Signature=L-reokY4cdElwI8HHeS9iKW58ip98C93-H~HpTII~Px9MXnLDATcnx-ZaQv5AXB6weQwhTXCekkyWSSLxJGsBqOLWxlzhDKADaXO-4HoKz6q-crjH6nX6-XIW0HQzfmxFRIGb9NP6sxwik7gx5fDpOzQLeVu5U~Js6kcysvwNVBRf9g90BJBjOWxV6UyIVchOYCaRFZgvZv-pCGevQhQ0RzENRzyWu15Ps~xweWRVAFAqYQwSO~hQbFULB~4ohbZ9Zxu3sxuXEyWg8Tg8P3KWIzvM2J190-H2Gazbsy-scpr4-rsf9PXWPMCD~i62IEhAAo8xjJwj5yyDR-a-VY8LQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+        link: "/category",
         Img: Ca1,
         bg: "rgba(242, 253, 228, 1)",
         ItemName: "Burger",

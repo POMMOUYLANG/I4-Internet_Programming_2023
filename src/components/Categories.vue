@@ -1,9 +1,11 @@
 <template>
-  <div class="Item-Box" :style="{ backgroundColor: bg }">
+  <a :href="link">
+    <div class="Item-Box" :style="{ backgroundColor: bg }">
     <img class="Img" :src="Img" alt="Product" />
     <div class="itemname">{{ ItemName }}</div>
     <div class="itemnumber">{{ ItemNumber }}</div>
   </div>
+  </a>
 </template>
 
 <script>
@@ -15,7 +17,7 @@ export default {
   //   bg: String,
   //   ItemNumber: String,
   // },
-  props: ["Img", "ItemName", "bg", "ItemNumber"],
+  props: ["Img", "ItemName", "bg", "ItemNumber","link"],
 };
 </script>
 

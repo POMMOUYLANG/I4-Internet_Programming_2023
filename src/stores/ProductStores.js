@@ -123,6 +123,7 @@ export const useProductStore = defineStore("Product_Store", {
         bg: "rgba(240, 232, 213, 1)",
         btncolor: "rgba(59, 183, 126, 1)",
         TextBtn: "Shop Now",
+        link: "/product",
       },
       {
         Text: "Make your Breakfast Healthy annd Easy",
@@ -130,6 +131,7 @@ export const useProductStore = defineStore("Product_Store", {
         bg: "rgba(243, 232, 232, 1)",
         btncolor: "rgba(205, 50, 17, 1)",
         TextBtn: "Shop Now",
+        link: "/product",
       },
       {
         Text: "The best Organic Products Online",
@@ -138,6 +140,7 @@ export const useProductStore = defineStore("Product_Store", {
         bg: "rgba(231, 234, 243, 1)",
         btncolor: "rgba(253, 192, 64, 1)",
         TextBtn: "Shop Now",
+        link: "/product",
       },
     ],
     Categories: [

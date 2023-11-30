@@ -1,5 +1,6 @@
 <template>
-  <div class="Cards-Box" :style="{ backgroundColor: bg }">
+  <a :href="link">
+    <div class="Cards-Box" :style="{ backgroundColor: bg }">
     <div>
       <div class="Text">{{ Text }}</div>
       <div class="btn">
@@ -8,6 +9,7 @@
     </div>
     <img class="Img" :src="Img" alt="Item" />
   </div>
+  </a>
 </template>
 
 <script>
@@ -21,7 +23,7 @@ export default {
   //   bgBtn: String,
   //   TextBtn: String,
   // },
-  props: ["Img", "Text", "bg", "bgBtn", "TextBtn"],
+  props: ["Img", "Text", "bg", "bgBtn", "TextBtn","link"],
   components: {
     Button,
   },

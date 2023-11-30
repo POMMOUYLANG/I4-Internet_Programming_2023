@@ -74,6 +74,7 @@
     <Promotions
       v-for="i in Promotions"
       :key="i.Promotions"
+      :link="i.link"
       :bg="i.bg"
       :Img="i.Img"
       :Text="i.Text"
@@ -192,7 +193,7 @@ export default {
   justify-content: start;
   align-items: center;
   position: relative;
-  bottom: 35px;
+  bottom: 45px;
   left: 260px;
 }
 .MenuBarAll {

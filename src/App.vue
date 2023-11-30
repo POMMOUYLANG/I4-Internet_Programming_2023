@@ -25,7 +25,7 @@ export default {
 <style>
 @import "https://unicons.iconscout.com/release/v4.0.0/css/line.css";
 .Container_Box {
-  margin: 0;
+  margin: auto;
   width: 1500px;
 }
 </style>

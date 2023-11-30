@@ -80,6 +80,9 @@ export default {
   width: 1500px;
   height: 50px;
   display: flex;
+  border-top: 2px solid rgba(229, 229, 229, 1);
+  border-bottom: 2px solid rgba(229, 229, 229, 1);
+  padding: 6px 0px 6px 0px;
 }
 .container_item .item_left {
   width: 85%;

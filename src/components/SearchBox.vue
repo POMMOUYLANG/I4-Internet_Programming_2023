@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <div class="container_logo">
-      <div class="logo">
-        <img src="../assets/images/melon.png" alt="logo" />
+    <RouterLink to="/">
+      <div class="container_logo">
+        <div class="logo">
+          <img src="../assets/images/melon.png" alt="logo" />
+        </div>
+        <div class="logo_text">
+          <div class="lg_text">Melon</div>
+          <div class="sm_text">MART & GRACERY</div>
+        </div>
       </div>
-      <div class="logo_text">
-        <div class="lg_text">Melon</div>
-        <div class="sm_text">MART & GRACERY</div>
-      </div>
-    </div>
+    </RouterLink>
     <div class="container_seach">
       <div class="all_category">
         <div class="cate_text">All Categories</div>

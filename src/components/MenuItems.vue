@@ -2,8 +2,13 @@
   <div class="menu_item">
     <a :href="link">
       <div class="first_item" :style="{ backgroundColor: first_bg }">
-        <i :class="first_icon" class="sizeicon" :style="{ color: first_color }"></i>
-        <div class="first_text">{{ first_text }}</div>
+        <i
+          :class="first_icon"
+          class="sizeicon"
+          :style="{ color: first_color }"></i>
+        <div class="first_text" :style="{ color: text_color }">
+          {{ first_text }}
+        </div>
       </div>
     </a>
     <a :href="link">
@@ -27,6 +32,7 @@ export default {
     "second_icon",
     "second_text",
     "second_color",
+    "text_color",
     "link",
   ],
 };
@@ -47,11 +53,11 @@ export default {
   align-items: center;
   gap: 5px;
 }
-.menu_item .first_item .first_text{
+/* .menu_item .first_item .first_text{
   color: rgba(126, 126, 126, 1);
   font-size: 16px;
   font-weight: 400;
-}
+} */
 .menu_item .second_item {
   display: flex;
   justify-content: center;
@@ -62,7 +68,7 @@ a {
   text-decoration: none;
   color: rgba(37, 61, 78, 1);
 }
-.sizeicon{
+.sizeicon {
   font-size: 20px;
 }
 </style>

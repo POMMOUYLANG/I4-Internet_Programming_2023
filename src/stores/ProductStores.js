@@ -45,6 +45,7 @@ export const useProductStore = defineStore("Product_Store", {
         first_icon: "uil-fire",
         first_color: "rgba(59, 183, 126, 1)",
         first_text: "Hot Deals",
+        text_color: "rgba(27, 27, 27, 1)",
       },
       {
         second_bg: "",
@@ -95,24 +96,28 @@ export const useProductStore = defineStore("Product_Store", {
         first_icon: "uil-user",
         first_color: "",
         first_text: "Account",
+        text_color: "rgba(126, 126, 126, 1)",
       },
       {
         first_bg: "",
         first_icon: "uil-sync",
         first_color: "",
         first_text: "Compare",
+        text_color: "rgba(126, 126, 126, 1)",
       },
       {
         first_bg: "",
         first_icon: "uil-heart",
         first_color: "",
         first_text: "Wishlist",
+        text_color: "rgba(126, 126, 126, 1)",
       },
       {
         first_bg: "",
         first_icon: "uil-shopping-cart",
         first_color: "",
         first_text: "Cart",
+        text_color: "rgba(126, 126, 126, 1)",
       },
     ],
     Promotions: [

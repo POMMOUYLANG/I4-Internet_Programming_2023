@@ -7,6 +7,7 @@
       :first_icon="first_icon"
       :first_color="first_color"
       :first_text="first_text"
+      :text_color="text_color"
       :second_bg="second_bg"
       :second_icon="second_icon"
       :second_color="second_color"
@@ -30,6 +31,7 @@ export default {
     "second_icon",
     "second_text",
     "second_color",
+    "text_color",
     "link",
   ],
 };

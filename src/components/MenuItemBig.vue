@@ -59,17 +59,6 @@ export default {
     MenuItemAll,
     MenuItems,
   },
-  props: [
-    "first_bg",
-    "first_icon",
-    "first_text",
-    "first_color",
-    "second_bg",
-    "second_icon",
-    "second_text",
-    "second_color",
-    "link",
-  ],
 };
 </script>
 

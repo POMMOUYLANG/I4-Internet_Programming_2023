@@ -10,6 +10,7 @@
         :first_icon="i.first_icon"
         :first_color="i.first_color"
         :first_text="i.first_text"
+        :text_color="i.text_color"
         :second_bg="i.second_bg"
         :second_icon="i.second_icon"
         :second_color="i.second_color"
@@ -30,6 +31,7 @@
         :first_icon="i.first_icon"
         :first_color="i.first_color"
         :first_text="i.first_text"
+        :text_color="i.text_color"
         :second_bg="i.second_bg"
         :second_icon="i.second_icon"
         :second_color="i.second_color"
@@ -151,7 +153,7 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;800&family=Quicksand:wght@400;600;700&display=swap");
-body{
+body {
   margin: auto;
   width: 1500px;
 }
@@ -203,5 +205,6 @@ body{
   align-items: center;
   position: relative;
   bottom: 40px;
+  font-weight: 400;
 }
 </style>

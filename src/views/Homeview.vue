@@ -88,6 +88,7 @@
     <Product
       v-for="i in Product"
       :key="i.Product"
+      :link="i.link"
       :Value="i.Value"
       :Bg_value="i.Bg_value"
       :Img="i.Img"

@@ -11,14 +11,18 @@
         </div>
       </div>
     </RouterLink>
-    <div class="container_seach">
+    <div class="container_search">
       <div class="all_category">
         <div class="cate_text">All Categories</div>
-        <div class="cate_icon"><i class="uil uil-angle-down"></i></div>
+        <div>
+          <i
+            class="uil uil-angle-down"
+            style="font-size: 20px; color: rgba(126, 126, 126, 1)"></i>
+        </div>
       </div>
       <div class="search_two">
-        <div>| <input type="text" placeholder="Search for items" /></div>
-        <i class="uil uil-search"></i>
+        <div><input type="text" placeholder="Search for items" /></div>
+        <div class="icon"><i class="uil uil-search"></i></div>
       </div>
     </div>
   </div>
@@ -60,43 +64,34 @@ export default {
   font-weight: 600;
   color: #253d4e;
 }
-.container_seach {
+.container_search {
   width: 700px;
   height: 50px;
-  padding: 0px 15px 0px 15px;
-  border: 2px solid rgba(59, 183, 126, 1);
   border-radius: 5px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-}
-.container_seach .all_category {
-  width: 20%;
-  font-size: 14px;
-  font-weight: 700;
-  color: #253d4e;
-  display: flex;
-  gap: 10px;
-}
-.container_seach .all_category .cate_icon {
-  color: rgba(126, 126, 126, 1);
-}
-.container_seach .search_two {
-  width: 80%;
-  color: rgba(182, 182, 182, 1);
+  border: 2px solid rgba(59, 183, 126, 1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
 }
 
-.container_seach .search_two input {
-  font-size: 12px;
-  font-weight: 400;
-  outline: none;
-  border: none;
-  color: rgba(182, 182, 182, 1);
+.container_search .all_category {
+  width: 25%;
+  display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  color: #253d4e;
+  border-right: 3px solid rgba(59, 183, 126, 1);
+  gap: 20px;
 }
-.container_seach .search_two .uil {
-  color: rgba(126, 126, 126, 1);
+.container_search .search_two {
+  width: 75%;
+  display: flex;
+}
+.container_search .search_two input {
+  width: 480px;
+  margin-left: 10px;
+  border: 1px solid white;
+  outline: none;
 }
 </style>

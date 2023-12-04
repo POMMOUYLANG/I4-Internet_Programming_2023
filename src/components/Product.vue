@@ -1,7 +1,7 @@
 <template>
   <div class="Product-Box">
     <div class="Value" :style="{ backgroundColor: Bg_value }">{{ Value }}</div>
-    <img class="Image" :src="Img" alt="Product" />
+    <a :href="link"><img class="Image" :src="Img" alt="Product" /></a>
     <div class="Details">
       <span class="hodo">Hodo Foods</span>
       <div class="Title">{{ Title }}</div>
@@ -66,6 +66,7 @@ export default {
     "Arrow",
     "arrowup",
     "arrowdown",
+    "link",
   ],
   components: {
     FontAwesomeIcon,

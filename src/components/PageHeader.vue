@@ -1,19 +1,30 @@
 <template>
   <div class="container_header">
-    <div class="category_name">Coke & Milk</div>
+    <div class="category_name">{{ categoryName }}</div>
     <ul>
-      <li>Home</li>
+      <RouterLink to="/"><li>Home</li></RouterLink>
+
       <li><i class="uil uil-angle-right"></i></li>
-      <li>Categiry</li>
+      <RouterLink to="/"><li>Categories</li></RouterLink>
       <li><i class="uil uil-angle-right"></i></li>
-      <li>Coke & Milk</li>
+      <li>{{ categoryName }}</li>
     </ul>
   </div>
 </template>
-
 <script>
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 export default {
   name: "PageHeader",
+  setup() {
+    const route = useRoute();
+
+    const categoryName = computed(() => {
+      return route.params.catId;
+    });
+
+    return { categoryName };
+  },
 };
 </script>
 

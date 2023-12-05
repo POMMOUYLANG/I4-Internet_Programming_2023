@@ -39,6 +39,7 @@
   <PageHeaderVue />
 </template>
 
+
 <script>
 import { useProductStore } from "../stores/ProductStores";
 import { mapState } from "pinia";
@@ -47,6 +48,7 @@ import MenuItemBig from "../components/MenuItemBig.vue";
 import SearchBox from "../components/SearchBox.vue";
 import MenuBarAll from "../components/MenuBarAll.vue";
 import PageHeaderVue from "../components/PageHeader.vue";
+
 export default {
   name: "Categoryview",
   components: {

@@ -1,23 +1,17 @@
 <template>
-  <a :href="link">
+  <RouterLink :to="`/category/${ItemName}`">
     <div class="Item-Box" :style="{ backgroundColor: bg }">
-    <img class="Img" :src="Img" alt="Product" />
-    <div class="itemname">{{ ItemName }}</div>
-    <div class="itemnumber">{{ ItemNumber }}</div>
-  </div>
-  </a>
+      <img class="Img" :src="Img" alt="Product" />
+      <div class="itemname">{{ ItemName }}</div>
+      <div class="itemnumber">{{ ItemNumber }}</div>
+    </div>
+  </RouterLink>
 </template>
 
 <script>
 export default {
   name: "Categories",
-  // props: {
-  //   Img: String,
-  //   ItemName: String,
-  //   bg: String,
-  //   ItemNumber: String,
-  // },
-  props: ["Img", "ItemName", "bg", "ItemNumber","link"],
+  props: ["Img", "ItemName", "bg", "ItemNumber"],
 };
 </script>
 

@@ -1,39 +1,38 @@
 <template>
-  <RouterLink :to="`/product/${id}`" class="Product-Box"> 
-   
-      <div class="Value" :style="{ backgroundColor: Bg_value }">
-        {{ Value }}
-      </div>
-      <a :href="link"><img class="Image" :src="Img[0]" alt="Product" /></a>
-      <div class="Details">
-        <span class="hodo">Hodo Foods</span>
-        <div class="Title">{{ Title }}</div>
-        <div class="Reviews">
-          <div class="Star">
-            <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
-            <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
-            <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
-            <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
-            <font-awesome-icon :icon="['fas', 'star']" style="color: #cdcdcd" />
-          </div>
-          <div class="num">(4.0)</div>
+  <RouterLink :to="`/product/${id}`" class="Product-Box">
+    <div class="Value" :style="{ backgroundColor: Bg_value }">
+      {{ Value }}
+    </div>
+    <a :href="link"><img class="Image" :src="Img[0]" alt="Product" /></a>
+    <div class="Details">
+      <span class="hodo">Hodo Foods</span>
+      <div class="Title">{{ Title }}</div>
+      <div class="Reviews">
+        <div class="Star">
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #cdcdcd" />
         </div>
-        <div class="gram">500gram</div>
-        <div class="money">
-          <div class="dolla">
-            <div class="lg">{{ Supvalue }}</div>
-            <div class="sm">{{ Subvalue }}</div>
+        <div class="num">(4.0)</div>
+      </div>
+      <div class="gram">500gram</div>
+      <div class="money">
+        <div class="dolla">
+          <div class="lg">{{ Supvalue }}</div>
+          <div class="sm">{{ Subvalue }}</div>
+        </div>
+        <div class="">
+          <div class="amount" @click="increaseNum()" v-if="button == true">
+            <!-- <AddButton /> -->
+            <ButtonAdd />
           </div>
-          <div class="">
-            <div class="amount" @click="increaseNum()" v-if="button == true">
-              <!-- <AddButton /> -->
-              <ButtonAdd />
-            </div>
-            <div class="amount" @click="decreaseNum()" v-else>
-              <ButtonPlus />
-            </div>
+          <div class="amount" @click="decreaseNum()" v-else>
+            <ButtonPlus />
           </div>
-          <!-- <button
+        </div>
+        <!-- <button
           class="add"
           :style="{ backgroundColor: Bgbtn, border: Borderbtn }">
           <div class="text">{{ Text }}</div>
@@ -41,10 +40,9 @@
             {{ Arrow }}
           </div>
         </button> -->
-        </div>
       </div>
-    </RouterLink>
-  
+    </div>
+  </RouterLink>
 </template>
 
 <script>
@@ -59,6 +57,7 @@ import ButtonPlus from "./ButtonPlus.vue";
 export default {
   name: "Product",
   props: [
+    "id",
     "Value",
     "Bg_value",
     "Img",
@@ -72,7 +71,6 @@ export default {
     "Arrow",
     "arrowup",
     "arrowdown",
-    "link",
   ],
   components: {
     FontAwesomeIcon,

@@ -39,9 +39,10 @@
 
   <div class="container">
     <div class="navbar">
-      <RouterLink to="/"><span class="home">Home</span></RouterLink> >
-      Vegetables & tubers >
-      {{ productInfo.Title }}
+      <RouterLink to="/"><span class="home">Home</span></RouterLink>
+      <i class="uil uil-angle-right"></i> Vegetables & tubers
+      <i class="uil uil-angle-right"></i>
+      <div class="text_color">{{ productInfo.Title }}</div>
     </div>
     <div class="wrapper">
       <div class="image-container">
@@ -61,6 +62,7 @@
             <div
               class="img"
               v-for="(img, index) in images"
+              :key="index"
               :class="{ active: index === imgIndex }"
               @click="imgIndex = index">
               <img :src="img" alt="image" />
@@ -76,9 +78,13 @@
         <div class="title">
           <h1>{{ productInfo.Title }}</h1>
         </div>
-        <div class="rate">
-          <i v-for="i in 4" class="pi pi-star-fill"></i
-          ><i class="pi pi-star"></i>(4.0)
+        <div class="Star">
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #fdc040" />
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #cdcdcd" />
+          (4.0)
         </div>
         <div class="price">
           <div class="discount-pirce">{{ productInfo.Supvalue }}</div>
@@ -93,12 +99,14 @@
           <div class="qty">
             <input type="number" :value="value" />
           </div>
-          <div class="add"><i class="uil uil-shopping-cart"></i>Add to cart</div>
+          <div class="add">
+            <i class="uil uil-shopping-cart"></i>Add to cart
+          </div>
           <div class="wishlist"><i class="uil uil-heart"></i></div>
           <div class="chnage"><i class="uil uil-link"></i></div>
         </div>
-        <div class="vender">Vender: NestMart</div>
-        <div class="sku">SKU: FWM15VKD</div>
+        <div class="vender">Vender: <span>NestMart</span></div>
+        <div class="sku">SKU: <span>FWM15VKD</span></div>
       </div>
     </div>
     <div class="more">
@@ -106,19 +114,24 @@
         <div class="more-navbar">
           <div class="more-button more-active">Description</div>
           <div class="more-button">Additional info</div>
-          <div class="more-button">Reviews (4)</div>
+          <div class="more-button">Reviews (3)</div>
         </div>
         <div class="more-content">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo nisi
-          laudantium ipsam odit voluptate voluptas dolores non labore rerum ab
-          dolore suscipit maxime adipisci, excepturi ducimus ratione magni
-          explicabo facilis. Lorem ipsum dolor sit amet consectetur, adipisicing
-          elit. Nemo nisi laudantium ipsam odit voluptate voluptas dolores non
-          labore rerum ab dolore suscipit maxime adipisci, excepturi ducimus
-          ratione magni explicabo facilis. Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit. Nemo nisi laudantium ipsam odit
-          voluptate voluptas dolores non labore rerum ab dolore suscipit maxime
-          adipisci, excepturi ducimus ratione magni explicabo facilis.
+          <div class="more-content1">
+            Uninhibited carnally hired played in whimpered dear gorilla koala
+            depending and much yikes off far quetzal goodness and from for
+            grimaced goodness unaccountably and meadowlark near unblushingly
+            crucial scallop tightly neurotic hungrily some and dear furiously
+            this apart.
+          </div>
+          <div class="more-content2">
+            Spluttered narrowly yikes left moth in yikes bowed this that grizzly
+            much hello on spoon-fed that alas rethought much decently richly and
+            wow against the frequent fluidly at formidable acceptably flapped
+            besides and much circa far over the bucolically hey precarious
+            goldfinch mastodon goodness gnashed a jellyfish and one however
+            because.
+          </div>
         </div>
       </div>
     </div>
@@ -134,6 +147,11 @@ import MenuItemAll from "../components/MenuItemAll.vue";
 import MenuItemBig from "../components/MenuItemBig.vue";
 import SearchBox from "../components/SearchBox.vue";
 import MenuBarAll from "../components/MenuBarAll.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+library.add(fas);
 export default {
   name: "Categoryview",
   components: {
@@ -142,6 +160,7 @@ export default {
     SearchBox,
     MenuBarAll,
     RouterLink,
+    FontAwesomeIcon,
   },
   computed: {
     ...mapState(useProductStore, ["MenuItemAll"]),
@@ -189,12 +208,32 @@ a {
 }
 .vender {
   margin-top: 20px;
-  font-size: 13px;
+  color: #253d4e;
+  font-size: 18px;
+  font-weight: 600;
+}
+.vender span {
+  color: #b6b6b6;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 10px;
 }
 .sku {
-  font-size: 13px;
+  margin-top: 20px;
+  color: #253d4e;
+  font-size: 18px;
+  font-weight: 600;
 }
+.sku span {
+  color: #b6b6b6;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 10px;
+
+}
+
 .container {
+  font-family: "Quicksand", sans-serif;
   width: 100%;
 }
 .navbar {
@@ -203,6 +242,9 @@ a {
   height: 40px;
   display: flex;
   justify-content: flex-start;
+  gap: 10px;
+  color: rgba(126, 126, 126, 1);
+  margin-bottom: 20px;
 }
 .wrapper {
   display: flex;
@@ -210,11 +252,17 @@ a {
 .home {
   color: #116a41;
 }
+.text_color {
+  color: rgba(59, 183, 126, 1);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
 .image-container {
   width: 50%;
-  height: 470px;
+  height: 670px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
 }
@@ -299,34 +347,37 @@ a {
 }
 .status {
   width: 100%;
-  height: 30px;
+  height: 40px;
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 .status span {
   width: 100px;
   height: 100%;
-  color: #116a41;
+  font-size: 14px;
+  color: #3bb77e;
   background-color: #def9ec;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  padding: 3px;
 }
 .title {
   width: 70%;
   height: 100px;
   display: flex;
   align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  color: rgba(37, 61, 78, 1);
+  margin-top: 10px;
 }
-.rate {
-  width: 100%;
-  height: 30px;
-  display: flex;
-  align-items: center;
-}
-.rate i {
-  margin-right: 5px;
+.Star {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .price {
   width: 40%;
@@ -351,6 +402,12 @@ a {
   height: 70px;
   display: flex;
   align-items: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  color: rgba(126, 126, 126, 1);
 }
 .action {
   width: 50%;
@@ -395,6 +452,7 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color:  rgba(182, 182, 182, 1);
 }
 .chnage {
   width: 40px;
@@ -405,22 +463,24 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color:  rgba(182, 182, 182, 1);
+
 }
 .more {
   margin-top: 50px;
   width: 100%;
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
 }
 .more-wrapper {
-  border: 1px solid #87928d;
   width: 85%;
   height: 100%;
+  border: 1px solid #87928d;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 .more-navbar {
   width: 90%;
@@ -428,24 +488,40 @@ a {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-top: 25px;
 }
+
 .more-button {
   width: 150px;
-  height: 30px;
+  height: 45px;
   margin-right: 12px;
-  border-radius: 12px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
+  color: var(--NestMart-Text-Muted, #b6b6b6);
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 15px;
+  border-radius: 30px;
+  border: 1px solid var(--NestMart-Background_grey-1, #f2f3f4);
+  background: #fff;
+  box-shadow: 5px 5px 15px 0px rgba(24, 24, 24, 0.05);
 }
 .more-content {
-  margin-top: 20px;
   width: 90%;
-  display: flex;
-  align-items: center;
+  margin-top: 50px;
+  display: grid;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--NestMart-TextBody, #7e7e7e);
 }
 .more-active {
   color: #3bb77e;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
 }
 </style>

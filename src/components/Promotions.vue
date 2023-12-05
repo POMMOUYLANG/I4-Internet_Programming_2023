@@ -1,15 +1,16 @@
 <template>
-  <a :href="link">
-    <div class="Cards-Box" :style="{ backgroundColor: bg }">
-    <div>
-      <div class="Text">{{ Text }}</div>
-      <div class="btn">
-        <Button :bgBtn="bgBtn" :TextBtn="TextBtn" />
+  <RouterLink
+    to="/product/1"
+    class="Cards-Box"
+    :style="{ backgroundColor: bg }">
+      <div>
+        <div class="Text">{{ Text }}</div>
+        <div class="btn">
+          <Button :bgBtn="bgBtn" :TextBtn="TextBtn" />
+        </div>
       </div>
-    </div>
-    <img class="Img" :src="Img" alt="Item" />
-  </div>
-  </a>
+      <img class="Img" :src="Img" alt="Item" />
+  </RouterLink>
 </template>
 
 <script>
@@ -23,7 +24,7 @@ export default {
   //   bgBtn: String,
   //   TextBtn: String,
   // },
-  props: ["Img", "Text", "bg", "bgBtn", "TextBtn","link"],
+  props: ["Img", "Text", "bg", "bgBtn", "TextBtn", "link"],
   components: {
     Button,
   },

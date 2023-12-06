@@ -1,18 +1,20 @@
 <template>
-  <div class="list_menuitem">
-    <MenuItems
-      class="list"
-      :link="link"
-      :first_bg="first_bg"
-      :first_icon="first_icon"
-      :first_color="first_color"
-      :first_text="first_text"
-      :text_color="text_color"
-      :second_bg="second_bg"
-      :second_icon="second_icon"
-      :second_color="second_color"
-      :second_text="second_text"></MenuItems>
-  </div>
+    <RouterLink :to="`/category/${ItemName}`">
+    <div class="list_menuitem">
+      <MenuItems
+        class="list"
+        :link="link"
+        :first_bg="first_bg"
+        :first_icon="first_icon"
+        :first_color="first_color"
+        :first_text="first_text"
+        :text_color="text_color"
+        :second_bg="second_bg"
+        :second_icon="second_icon"
+        :second_color="second_color"
+        :second_text="second_text"></MenuItems>
+    </div>
+  </RouterLink>
 </template>
 
 <script>
@@ -21,6 +23,12 @@ export default {
   name: "MenuItemAll",
   components: {
     MenuItems,
+  },
+  props:["Itemname"],
+  data(){
+    return{
+      ItemName:"Hot Deals",
+    }
   },
   props: [
     "first_bg",

@@ -50,7 +50,7 @@ export const useProductStore = defineStore("Product_Store", {
     // ],
     MenuItemAll: [
       {
-        link: "/category",
+        link: "/category  ",
         first_bg: "",
         first_icon: "uil-fire",
         first_color: "rgba(59, 183, 126, 1)",

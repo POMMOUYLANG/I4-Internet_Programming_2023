@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 //Categories
 
+Route::get('/', function (Request $request) {
+    return "Welcome To Page\n";
+});
+
 Route::get('/categories', function (Request $request) {
     return "Get all categories\n";
 });

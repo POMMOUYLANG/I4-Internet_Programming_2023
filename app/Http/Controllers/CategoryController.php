@@ -7,20 +7,18 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function getCategories(){
-        $categories = Category::all();
-        return $categories;
-    }
+    //Get /api/categories
+    public function getCategories(){}
 
-    public function createCategories(){
-        $categories = Category::create(['name'=>'BOOK']);
-        return categories;
-    }
+    //Post /api/categories
+    public function createCategories(){}
 
-    public function getCategory($categoryId){}
+    //Get /api/categories/{categoryID}
+    public function getCategory($categoryID){}
 
-    public function updateCategory($categoryId){}
+    //Patch /api/categories/{categoryID}
+    public function updateCategory($categoryID){}
 
-    public function deleteCategory($categoryId){}
-
+    //Delete /api/categories/{categoryID}
+    public function deleteCategory($categoryID){}
 }

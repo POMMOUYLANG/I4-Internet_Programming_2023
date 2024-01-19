@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// AuthController
+
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::post('/login', [AuthController::class, 'login']);
+
 
 //Categories
 

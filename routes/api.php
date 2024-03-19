@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+//===================================>>User
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -22,20 +23,20 @@ Route::middleware('auth:api')->get('/test', function () {
     return "Test page";
 });
 
-// AuthController
+//===================================>>AuthController
 
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
 
-//Categories
+//===================================>>Categories
 
 Route::get('/', function (Request $request) {
     return "Welcome To Page\n";
 });
 
-Route::get('/categories', function (Request $request) {
+Route::middleware('auth:api')->get('/categories', function (Request $request) {
     return "Get all categories\n";
 });
 
@@ -56,7 +57,7 @@ Route::delete('/categories/{categoryID}', function (Request $request) {
 });
 
 
-//Products
+//===================================>>Products
 
 Route::get('/products', function (Request $request) {
     return "Get all products\n";

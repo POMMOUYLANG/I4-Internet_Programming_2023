@@ -2,23 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use Faker\Factory as Faker;
 
 class CategoryController extends Controller
 {
-    //Get /api/categories
-    public function getCategories(){}
+    // --- GetAll /api/categories
+    public function getCategories(){
+       $categories = Category::all();
 
-    //Post /api/categories
-    public function createCategories(){}
+       return view('showcat',['c' => $categories]);
+        // return $categories;
+    }
 
-    //Get /api/categories/{categoryID}
-    public function getCategory($categoryID){}
+    // --- Post /api/categories
+    public function createCategories(){
+        $name = Faker::create();
 
-    //Patch /api/categories/{categoryID}
-    public function updateCategory($categoryID){}
+        $category = new Category([
+            'name' => $name->name
+        ]);
+        $category->save();
 
-    //Delete /api/categories/{categoryID}
-    public function deleteCategory($categoryID){}
+        return view('showcat',['c'=> Category::all()]);
+    }
+
+    // --- Get /api/categories/{categoryId}
+    public function getCategory($categoryId){
+        $categories[] = Category::find($categoryId);
+
+        return view('showcat',['c'=> $categories]);
+        // return $categories;
+    }
+
+    // --- Patch /api/categories/{categoryId}
+    public function updateCategory($categoryId){
+        $category[] = Category::find($categoryId);
+
+        $category[0]->name = 'ChangedName';
+        $category[0]->save();
+
+        return view('showcat',['c'=> $category]);
+    }
+
+    // --- Delete /api/categories/{categoryId}
+    public function deleteCategory($categoryId){
+        $category = Category::find($categoryId);
+
+        $category->delete();
+        return view('showcat',['c'=> Category::all()]);
+    }
+
+
 }

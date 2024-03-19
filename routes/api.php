@@ -25,9 +25,19 @@ Route::middleware('auth:api')->get('/test', function () {
 
 //===================================>>AuthController
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register',[AuthController::class, "register"]);
 
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login',[AuthController::class, "login"]);
+
+Route::get('/send-test-email', function () {
+    $user = [
+        'name' => 'POM MOUYLANG',
+        'email' => 'mouylangpom@gmail.com',
+    ];
+    Mail::to($user['email'])->send(new TestMail($user));
+
+    return "Test email sent!";
+});
 
 
 //===================================>>Categories
@@ -87,3 +97,5 @@ Route::get('/categories/{categoryID}/products', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+

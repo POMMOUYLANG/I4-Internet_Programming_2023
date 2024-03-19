@@ -2,94 +2,76 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OtpMail;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
-    public function register(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
-        ]);
+    public function register(Request $request){
+        $userFound = User::where('email', $request->get('email'))->first();
 
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 422);
+        if($userFound){
+            return response(["message" => "User with this email already exist"], 400);
+        }else{
+            if($request->get('password') == $request->get('confirm_password')){
+                $user = new User();
+
+                $user->name = $request->get('username');
+                $user->email = $request->get("email");
+                $user->password = bcrypt($request->get('password'));
+
+                $otp = mt_rand(100000, 999999);
+                $user->otp = $otp;
+
+                $user->save();
+
+                Mail::to($user->email)->send(new OtpMail('http://localhost/verify_otp?user_id='.$user->id.'&code='.$otp));
+
+                return ["message" => "success"];
+            }else{
+                return response(["message"=>"Password and confirm_password is not matched!"],400);
+            }
         }
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
-
-        // You may want to send a verification email or generate an OTP here
-
-        return response()->json(['message' => 'User registered successfully']);
     }
+    public function login(Request $request){
+        // Get email/username and search in the database
+        $user = User::where('email', $request->get('email'))->first();
+
+        // Verify given password with the encrypted password inside the database
+        if($user){
+            if(Hash::check($request->password,$user->password)){
+
+                $token = $user->createToken('API_Token')->accessToken;
     
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $token = $user->createToken('authToken')->accessToken;
-
-            return response()->json(['token' => $token]);
+                return response(['message'=>"Login successfully",'token'=>$token]);
+            }else{
+                // Return Forbidden Error back to user in case the password is incorrect.
+                return response(['error'=>"Forbidden Error"],400);
+            }
+        }else{
+            //User not found
+            return response(["error"=>"Cannot find User"], 400);
         }
+    }
+    public function verifyOTP(Request $request){
+        // The Incoming url is in this format: http//localhost/verify_otp?
+        $code = $request->query('code');
+        $userId = $request->query('user_id');
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        $user = User::find($userId);
+
+        if($user && $code == $user->otp){
+            $user->email_verified_at = Carbon::now();
+
+            $user->save();
+            return ["message" => "OTP is valid, your account is registered"];
+        }else{
+            return response(["message"=>"OTP is invalid"], 400);
+        }
     }
 
-    public function verifyOTP(Request $request)
-    {
-        // // Implement your logic to verify the OTP here
-        // // This could involve sending a code to the user's email or phone number and checking it against the provided input
-
-        // // For example:
-        // $user = User::where('email', $request->email)->first();
-
-        // if (!$user || $user->otp !== $request->otp) {
-        //     return response()->json(['error' => 'Invalid OTP'], 401);
-        // }
-
-        // // Mark the user as verified or perform any other necessary actions
-
-        // return response()->json(['message' => 'Email verified successfully']);
-    }
 }
-
-
-// public function register(Request $request)
-//     {
-//         $validator = Validator::make($request->all(), [
-//             'name' => 'required|string|max:255',
-//             'email' => 'required|string|email|max:255|unique:users',
-//             'password' => 'required|string|min:6|confirmed',
-//         ]);
-
-//         if ($validator->fails()) {
-//             return response()->json(['error' => $validator->errors()], 422);
-//         }
-
-//         // Encrypt the password before saving to the database
-//         $encryptedPassword = bcrypt($request->password);
-
-//         // Generate a 6-digit OTP
-//         $otpCode = rand(100000, 999999);
-
-//         $user = User::create([
-//             'name' => $request->name,
-//             'email' => $request->email,
-//             'password' => $encryptedPassword,
-//             'otp' => $otpCode,
-//         ]);
-
-//         // Send OTP to user's email (you may want to use a mail library or service for this)
-//         $verificationLink = "http://localhost:9000/verify_otp?code=$otpCode";
-//         // Here you can send an email to the user with the verification link
-
-//         return response()->json(['message' => 'User registered successfully. OTP sent to your email.']);
-//     }

@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+// use App\Http\Controllers\AuthController;
+// use App\Http\Controllers\CategoryController;
+// use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/home', [HomeController::class, 'renderHome']);
+
+// Route::get('/renderHome', function () {
+//     return view('home');
+// });
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,22 +42,22 @@ Route::middleware('auth')->group(function () {
 // Route::resource('categories','App\Http\Controllers\CategoryController');
 // Route::resource('products','App\Http\Controllers\ProductController');
 
-Route::middleware(['auth:api','authorization:admin'])->group(function() {
-    Route::get('/categories', [CategoryController::class,'getCategories']);
-    Route::post('/categories', [CategoryController::class,'createCategories']);
-    Route::get('/categories/{categoryId}', 'App\Http\Controllers\CategoryController@getCategory');
-    Route::patch('/categories/{categoryId}/edit', [CategoryController::class,'updateCategory']);
-    Route::delete('/categories/{categoryId}/delete', [CategoryController::class,'deleteCategory']);
-    Route::get('/categories/{categoryId}/products', [ProductController::class,'getCategoryProducts']);
+// Route::middleware(['auth:api','authorization:admin'])->group(function() {
+//     Route::get('/categories', [CategoryController::class,'getCategories']);
+//     Route::post('/categories', [CategoryController::class,'createCategories']);
+//     Route::get('/categories/{categoryId}', 'App\Http\Controllers\CategoryController@getCategory');
+//     Route::patch('/categories/{categoryId}/edit', [CategoryController::class,'updateCategory']);
+//     Route::delete('/categories/{categoryId}/delete', [CategoryController::class,'deleteCategory']);
+//     Route::get('/categories/{categoryId}/products', [ProductController::class,'getCategoryProducts']);
     
-    Route::get('/products', [ProductController::class,'getProducts']);
-    Route::post('/products', [ProductController::class,'createProduct']);
-    Route::get('/products/{product}', [ProductController::class,'getProduct']);
-    Route::patch('/products/{product}/edit', [ProductController::class,'updateProduct']);
-    Route::delete('/products/{product}/delete', [ProductController::class,'deleteProduct']);
-});
+//     Route::get('/products', [ProductController::class,'getProducts']);
+//     Route::post('/products', [ProductController::class,'createProduct']);
+//     Route::get('/products/{product}', [ProductController::class,'getProduct']);
+//     Route::patch('/products/{product}/edit', [ProductController::class,'updateProduct']);
+//     Route::delete('/products/{product}/delete', [ProductController::class,'deleteProduct']);
+// });
 
 
-Route::get('/verify_otp',[AuthController::class, "verifyOTP"]);
+// Route::get('/verify_otp',[AuthController::class, "verifyOTP"]);
 
 require __DIR__.'/auth.php';
